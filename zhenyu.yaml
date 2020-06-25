@@ -82,34 +82,9 @@ proxies:
 #   rc4-md5 chacha20-ietf xchacha20
 #   chacha20-ietf-poly1305 xchacha20-ietf-poly1305
 
-# Trojan
-- name: "1"
-  type: trojan
-  server: zhenyu.xxooplmm.com
-  port: 443
-  password: zhenyu
-  # udp: true
-  # sni: example.com # aka server name
-  # alpn:
-  #   - h2
-  #   - http/1.1
-  # skip-cert-verify: true
 
 # Trojan
-- name: "2"
-  type: trojan
-  server: oo.xxooplmm.com
-  port: 443
-  password: zhenyu
-  # udp: true
-  # sni: example.com # aka server name
-  # alpn:
-  #   - h2
-  #   - http/1.1
-  # skip-cert-verify: true
-
-# Trojan
-- name: "3"
+- name: "hk1"
   type: trojan
   server: xianggang.jiebao.buzz
   port: 443
@@ -122,7 +97,7 @@ proxies:
   # skip-cert-verify: true
 
 # Trojan
-- name: "4"
+- name: "hk2"
   type: trojan
   server: kanpian.jiebao.buzz
   port: 443
@@ -135,7 +110,7 @@ proxies:
   # skip-cert-verify: true
 
 # Trojan
-- name: "5"
+- name: "tw"
   type: trojan
   server: taiwan.jiebao.buzz
   port: 443
@@ -148,7 +123,7 @@ proxies:
   # skip-cert-verify: true
 
 # Trojan
-- name: "riben"
+- name: "japan"
   type: trojan
   server: riben.xxooplmm.com
   port: 443
@@ -180,12 +155,10 @@ proxy-groups:
 - name: "UrlTest"
   type: url-test
   proxies:
-    - "1"
-    - "2"
-    - "3"
-    - "4"
-    - "5"
-    - "riben"
+    - "hk1"
+    - "hk2"
+    - "tw"
+    - "japan"
     - "sing"
   url: 'http://www.gstatic.com/generate_204'
   interval: 300
@@ -194,12 +167,10 @@ proxy-groups:
 # - name: "Fallback"
 #   type: fallback
 #   proxies:
-#     - "1"
-#     - "2"
-#     - "3"
-#     - "4"
-#     - "5"
-#     - "riben"
+#     - "hk1"
+#     - "hk2"
+#     - "tw"
+#     - "japan"
 #     - "sing"
 #   url: 'http://www.gstatic.com/generate_204'
 #   interval: 300
@@ -208,12 +179,10 @@ proxy-groups:
 # - name: "LoadBalance"
 #   type: load-balance
 #   proxies:
-#     - "1"
-#     - "2"
-#     - "3"
-#     - "4"
-#     - "5"
-#     - "riben"
+#     - "hk1"
+#     - "hk2"
+#     - "tw"
+#     - "japan"
 #     - "sing"
 #   url: 'http://www.gstatic.com/generate_204'
 #   interval: 300
@@ -223,12 +192,10 @@ proxy-groups:
   type: select
   proxies:
     - "UrlTest"
-    - "1"
-    - "2"
-    - "3"
-    - "4"
-    - "5"
-    - "riben"
+    - "hk1"
+    - "hk2"
+    - "tw"
+    - "japan"
     - "sing"
 # 白名单模式 PROXY，黑名单模式 DIRECT
 - name: "Final"
@@ -249,24 +216,20 @@ proxy-groups:
   type: select
   proxies:
     - "PROXY"
-    - "1"
-    - "2"
-    - "3"
-    - "4"
-    - "5"
-    - "riben"
+    - "hk1"
+    - "hk2"
+    - "tw"
+    - "japan"
     - "sing"
 # 大陆流媒体面向港澳台限定服务
 - name: "HKMTMedia"
   type: select
   proxies:
     - "DIRECT"
-    - "1"
-    - "2"
-    - "3"
-    - "4"
-    - "5"
-    - "riben"
+    - "hk1"
+    - "hk2"
+    - "tw"
+    - "japan"
     - "sing"
 
 # 规则
