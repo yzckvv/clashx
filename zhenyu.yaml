@@ -101,7 +101,7 @@ proxies:
   type: trojan
   server: kanpian.jiebao.buzz
   port: 443
-  password: 74bf9417
+  password: zhenyu
   # udp: true
   # sni: example.com # aka server name
   # alpn:
